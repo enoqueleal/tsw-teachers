@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>USP Teachers</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+
+        <div id="teachers">
+            <div v-for="teacher of teachers">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img style="width: 100px;" v-bind:src="teacher.image" v-bind:alt="teacher.name" class="img-rounded">
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <p class="form-control-static">{{teacher.name}}</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <a v-bind:href="teacher.lattes" v-bind:title="teacher.lattes"><i class="fa fa-graduation-cap"></i></a>
+                                    <label>&nbsp;</label>
+                                    <a v-bind:href="teacher.linkedin" v-bind:title="teacher.linkedin"><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: '#teachers',
+            data: {
+                teachers: [
+                    {
+                        "name": "Fabio Levy Siqueira",
+                        "linkedin: ": "https://www.linkedin.com/in/levysiqueira/",
+                        "lattes": "http://lattes.cnpq.br/7009094413011494",
+                        "image": "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4735512J0",
+                        "discipline": "Engenharia de Software"
+                    },
+                    {
+                        "name": "Lucia Vilela Leite Filgueiras",
+                        "linkedin": "https://www.linkedin.com/in/lucia-filgueiras-917519/",
+                        "lattes": "http://lattes.cnpq.br/7997899743453190",
+                        "image": "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4784796Y6",
+                        "discipline": "Experiência do Usuário e Design de Interação"
+                    },
+                    {
+                        "name": "Geraldo Lino de Campos",
+                        "linkedin": "https://www.linkedin.com/in/geraldolinodecampos/",
+                        "lattes": "http://lattes.cnpq.br/0484278335520113",
+                        "image": "https://media-exp1.licdn.com/dms/image/C4D03AQFjEjoVLMeLuw/profile-displayphoto-shrink_200_200/0?e=1590624000&v=beta&t=nJgzrF_XesMWcYuSTIviH5aXpHVBerrfgHfIziJ0tE0",
+                        "discipline": "Infra-estrutura Computacional"
+                    }
+                ]
+            }
+        });
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
